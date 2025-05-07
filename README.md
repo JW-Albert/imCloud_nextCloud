@@ -14,7 +14,7 @@
 1. 安裝 Terraform 並加入 PATH。
 2. 安裝 AWS CLI 並使用 `aws configure` 設定憑證與預設區域。
 3. AWS 上已有 Key Pair，並下載 `.pem` 私鑰檔案。
-4. 取得 Ubuntu 22.04 AMI ID。
+4. 取得 Ubuntu 22.04 AMI ID (可以到這裡查: https://cloud-images.ubuntu.com/locator/ec2/)。
 
 ## 使用步驟
 1. 將所有檔案放在同一資料夾 (terraform-nextcloud)。
