@@ -1,3 +1,5 @@
-ami_id      = "ami-013d590bbcbfa9792"   # 到 AWS Console 找 Ubuntu 22.04 AMI
+ami_id      = "ami-044ffe1dd15859af4"
+# Zone	Name	Version	Arch	Instance Type	Release	AMI-ID	AKI-ID
+# ap-northeast-1	Jammy Jellyfish	22.04 LTS	amd64	hvm:ebs-ssd	20250425	ami-044ffe1dd15859af4	hvm
 key_name    = "my-ssh-key"              # AWS 上的 KeyPair
-bucket_name = "imcloud-nextcloud-data"  # S3 bucket 名稱，自訂唯一
+volume_size  = 200                       # EBS sc1 卷大小 (GB)

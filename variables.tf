@@ -1,13 +1,13 @@
 variable "aws_region" {
   description = "AWS 區域"
   type        = string
-  default     = "ap-northeast-1"    # 東京區
+  default     = "ap-northeast-1"    # 東京區，可依需求調整
 }
 
 variable "instance_type" {
-  description = "EC2 機器型號"
+  description = "EC2 機器型號（最便宜 t3.nano）"
   type        = string
-  default     = "t3.micro"
+  default     = "t3.nano"
 }
 
 variable "ami_id" {
@@ -20,7 +20,8 @@ variable "key_name" {
   type        = string
 }
 
-variable "bucket_name" {
-  description = "S3 Bucket 名稱"
-  type        = string
+variable "volume_size" {
+  description = "掛載到 EC2 的 EBS 卷大小 (GB)"
+  type        = number
+  default     = 200
 }

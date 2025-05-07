@@ -1,13 +1,20 @@
 #!/bin/bash
 apt-get update
-# 安裝 nginx + PHP
 apt-get install -y nginx php-fpm php-mysql php-xml php-gd php-curl php-zip unzip wget
 
-# 下載並部署 Nextcloud
+# 格式化 & 掛載 sc1 HDD (/dev/xvdb)
+mkfs.ext4 /dev/xvdb
+mkdir -p /mnt/nextcloud_data
+echo '/dev/xvdb /mnt/nextcloud_data ext4 defaults 0 2' >> /etc/fstab
+mount -a
+
+# 部署 Nextcloud，並將 data 圖錄至 /mnt/nextcloud_data
 cd /var/www
 wget https://download.nextcloud.com/server/releases/latest.zip
 unzip latest.zip
 chown -R www-data:www-data nextcloud
+mv nextcloud/data /mnt/nextcloud_data
+ln -s /mnt/nextcloud_data /var/www/nextcloud/data
 
 # Nginx 設定
 cat >/etc/nginx/sites-available/nextcloud <<'EOF'
